@@ -1,0 +1,41 @@
+@charset "UTF-8";
+@function rem($val){ @return ($val/75)+rem; }
+
+$color:#328ffd;
+$red:#f33;
+$gray:#9c9fab;
+$white:#fff;
+$yellow:#fffbc3;
+
+$blue:#006cff;
+
+
+//底边
+.bor-bot {
+    border-bottom: 1px solid #eee;
+}
+//四边颜色蓝色
+.bor-blue {
+    color: $blue;
+    border: 1px solid $blue;
+    background: #fff;
+}
+
+//动画
+.tra-all {
+    transition: all 0.3s;
+}
+
+.t-shadow {
+    text-shadow: 0 0 3px rgba(0,0,0,0.8);
+}
+
+.fz16 {
+    font-size: 16px;
+}
+
+//超出隐藏
+.over-hide {
+    overflow: hidden;
+}
+

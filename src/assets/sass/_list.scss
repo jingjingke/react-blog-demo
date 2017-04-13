@@ -1,0 +1,55 @@
+@charset "UTF-8";
+//列表主体
+.article-list {
+    padding:100px 120px 120px;
+    @extend .bor-bot;
+    li {
+        margin-top: 100px;
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+    h2 {
+        @extend .bor-bot;
+    }
+}
+//文章描述
+.article-des {
+    padding: 20px 0;
+    @extend .bor-bot;
+    @extend .over-hide;
+    img {
+        float:right;
+        width:240px;
+        margin-left: 20px;
+    }
+    p {
+        @extend .fz16;
+        line-height: 1.8em;
+    }
+}
+//文章来源
+.article-source {
+    padding: 15px 0;
+    @extend .over-hide;
+}
+    //来源--信息
+    .article-source-info {
+        color: #aaa;
+        a {
+            font-weight: bold;
+            color: #999;
+            &:hover {
+                color: #666;
+            }
+        }
+    }
+//更多详情
+.article-more {
+    float: right;
+    color: $blue;
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+    }
+}

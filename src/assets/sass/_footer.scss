@@ -1,0 +1,25 @@
+@charset "UTF-8";
+//底部
+.footer {
+    background: #000;
+    padding:28px;
+    line-height: 1.6;
+    .link {
+        color: #aaa;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+//版权
+.foot-copy {
+    .link {
+        float: right;
+    }
+}
+//作品demo
+.foot-demo {
+    .link {
+        padding: 0 5px;
+    }
+}

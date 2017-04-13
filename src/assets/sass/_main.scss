@@ -1,0 +1,75 @@
+@charset "UTF-8";
+.main {
+    float: left;
+    width: 59.9%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+//分页
+.page-numbers {
+    position: relative;
+    padding: 24px 28px;
+    min-height: 38px;
+    text-align: center;
+    span,a {
+        display: inline-block;
+        min-width: 38px;
+        line-height: 38px;
+        background: #fff;
+        border: 1px solid #e8e8e8;
+        @extend .fz16;
+    }
+    a:hover {
+        color: #333;
+        background: #e6e6e6;
+        border-color:#adadad;
+    }
+    .current {
+        background-color: #f1f1f1;
+        border-color:#f1f1f1;
+    }
+    .next,.prev {
+        position: absolute;
+        top: 24px;
+        font-family:"sans-serif";
+        font-weight: bold;
+        color: #999;
+    }
+    .prev {
+        left: 3%;
+     }
+    .next {
+        right: 3%;
+    }
+}
+
+//当前位置（也应用于main-tag）
+.main-site {
+    padding: 15px 28px 20px;
+    line-height:2;
+    @extend .bor-bot;
+    a,span {
+        display:inline-block;
+        padding: 0 10px;
+    }
+}
+//tags
+.main-tag {
+    @extend .main-site;
+    a,span {
+        margin: 5px 5px 0 0;
+    }
+    span {
+        background: #000;
+        color: #fff;
+    }
+    a {
+        border: 1px solid #e8e8e8;
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+            @extend .bor-blue;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.header {
+    float: left;
+    width: 40%;
+    height: 100%;
+    position: relative;
+    background-image: url(../img/header.jpg);
+    &:before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: $blue;
+        position:absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        opacity: 0.3;
+    }
+}
+
+.header-tags {
+    padding: 0 40px;
+    a {
+        display: inline-block;
+        color: #fff;
+        padding: 0 3px;
+        margin: 3px;
+        line-height: 2;
+        text-align: justify;
+        word-break: keep-all;
+    }
+}
+
+//h1标题及说明
+.header-caption {
+    padding: 80px 100px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    top: 20%;
+    @extend .t-shadow;
+}
+.caption-des {
+    @extend .fz16;
+} 

@@ -2,18 +2,18 @@
 
 最近正在学习react，真正开始着手的第一个demo就是想做一个blog。而当前阶段还在开发中，有空的时候会慢慢做起来，所以暂时还不太适用克隆。
 
-另外项目使用的是官方推荐的Create React App，并且随着yarn进入人的眼前，Create React App也开始使用yarn进行包管理。
+另外项目使用的是官方推荐的Create React App，并且随着yarn渐渐进入视线，Create React App也开始使用yarn进行包管理了。
 
 
 ## 前置知识 ##
 
-使用了react、react-router、es6所以建议阅读：
+使用了react、react-router、axios、es6所以建议阅读：
 
 [React 文档](http://reactjs.cn/react/docs/getting-started-zh-CN.html)
 
 [React Router 文档](http://react-guide.github.io/react-router-cn/)
 
-另外需要注意的是router我使用的是3.X版本（之前使用4.X时运行有问题）,不要搞错了
+另外需要注意的是router我使用的是3.X版本（之前使用4.X时运行有问题）
 
 ## 目录结构 ##
 

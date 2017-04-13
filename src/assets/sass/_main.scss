@@ -9,11 +9,12 @@
 //分页
 .page-numbers {
     position: relative;
-    padding: 24px 28px;
+    padding: 24px 80px;
     min-height: 38px;
     text-align: center;
     span,a {
         display: inline-block;
+        margin: 3px;
         min-width: 38px;
         line-height: 38px;
         background: #fff;
@@ -31,16 +32,17 @@
     }
     .next,.prev {
         position: absolute;
-        top: 24px;
+        top: 27px;
+        margin: 0;
         font-family:"sans-serif";
         font-weight: bold;
         color: #999;
     }
     .prev {
-        left: 3%;
+        left: 28px;
      }
     .next {
-        right: 3%;
+        right: 28px;
     }
 }
 

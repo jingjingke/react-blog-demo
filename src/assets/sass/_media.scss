@@ -168,7 +168,7 @@
             min-height: rem(38);
         }
         .next,.prev {
-            top: rem(28);
+            display: none;
         }
     }
     .article-detail {

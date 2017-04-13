@@ -16,7 +16,6 @@ export default class extends Component {
 				loading:false,
 				data:response.data
 			})
-			
 		})
 	}
 	render(){

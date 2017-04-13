@@ -14,3 +14,7 @@ input::-webkit-input-placeholder{
 button { border: none;}
 a { color: #333; text-decoration:none; }
 a:hover { color: $blue; @extend .tra-all;}
+
+#root {
+    .disNone { display: none;}
+}

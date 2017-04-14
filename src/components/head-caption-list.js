@@ -11,7 +11,8 @@ export default class extends Component {
 		super(props)
 		this.state = {
 			data:[],
-			typeid:0
+			id:0,
+			tt:''
 		}
 	}
 	setAajx(){
@@ -25,7 +26,8 @@ export default class extends Component {
 		}).then(response=>{
 			this.setState({
 				data:response.data,
-				typeid:type.id
+				id:type.id,
+				tt:type.type
 			})
 		})
 	}
@@ -34,22 +36,25 @@ export default class extends Component {
 		if(this.props.type === undefined){
 			return (<div className='disNone'></div>)
 		}else{
-			//判断只有当props传递的数据与state保存的数据不一致时再去发送ajax
-			if(this.props.type.id !== this.state.typeid){
-				this.setAajx()
+			var title,tags;
+			if(this.props.type.type==='typeid'){
+				//判断只有当props传递的数据与state保存的数据不一致时再去发送ajax
+				if(this.props.type.id !== this.state.id && this.props.type.type !== this.state.tt){
+					this.setAajx()
+				}
+				//制作tag列表
+				var list = this.state.data.map((item,index)=>{
+					return (<Link key={index} to={'/list/tagid/'+item.id}>{item.tag}</Link>)
+				})
+				title = (<h1>{this.props.type.typename}</h1>)
+				tags = (<p className="header-tags">{list}</p>)
+			}else{
+				title = (<h1>{this.props.type.tag}</h1>)
+				tags = (<p className='disNome'></p>)
 			}
-			//制作tag列表
-			var list = this.state.data.map((item,index)=>{
-				return (<Link key={index} to={'/list/tagid/'+item.id}>{item.tag}</Link>)
-			})
-			//完
+			
 			return (
-				<div className="header-caption">
-					<h1>{this.props.type.typename}</h1>
-					<p className="header-tags">
-						{list}
-					</p>
-				</div>
+				<div className="header-caption">{title}{tags}</div>
 			)
 		}
 	}

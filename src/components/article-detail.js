@@ -1,34 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component,PropTypes } from 'react'
 
 export default class extends Component {
+	static propTypes = {
+		body:PropTypes.string,
+		des:PropTypes.string,
+		pic:PropTypes.string
+	}
 	render(){
-		return (
-			<div className="article-detail">
-				<p>因为我的数据请求过程中需要用到appId和appSecret，所以在登录成功之后，将这一对数据存入缓存中，在接下来的过程中都是从缓存中拿appId和appSecret来使用。</p>
-				<p>点击退出时，则将缓存中这一对数据清空，并去登录页面重新获取一对appId和appSecret。</p>
-				<p>退出后若在其它功能页面访问其它数据接口，发送ajax后台在验证appId时，会发现这是一个无效的appId，同样会提示过期，然后重新登录。</p>
-				<p>因为我的数据请求过程中需要用到appId和appSecret，所以在登录成功之后，将这一对数据存入缓存中，在接下来的过程中都是从缓存中拿appId和appSecret来使用。</p>
-				<p>点击退出时，则将缓存中这一对数据清空，并去登录页面重新获取一对appId和appSecret。</p>
-				<p>退出后若在其它功能页面访问其它数据接口，发送ajax后台在验证appId时，会发现这是一个无效的appId，同样会提示过期，然后重新登录。</p>
-				<p>因为我的数据请求过程中需要用到appId和appSecret，所以在登录成功之后，将这一对数据存入缓存中，在接下来的过程中都是从缓存中拿appId和appSecret来使用。</p>
-				<p>点击退出时，则将缓存中这一对数据清空，并去登录页面重新获取一对appId和appSecret。</p>
-				<p>退出后若在其它功能页面访问其它数据接口，发送ajax后台在验证appId时，会发现这是一个无效的appId，同样会提示过期，然后重新登录。</p>
-				<p>因为我的数据请求过程中需要用到appId和appSecret，所以在登录成功之后，将这一对数据存入缓存中，在接下来的过程中都是从缓存中拿appId和appSecret来使用。</p>
-				<p>点击退出时，则将缓存中这一对数据清空，并去登录页面重新获取一对appId和appSecret。</p>
-				<p>退出后若在其它功能页面访问其它数据接口，发送ajax后台在验证appId时，会发现这是一个无效的appId，同样会提示过期，然后重新登录。</p>
-				<p>因为我的数据请求过程中需要用到appId和appSecret，所以在登录成功之后，将这一对数据存入缓存中，在接下来的过程中都是从缓存中拿appId和appSecret来使用。</p>
-				<p>点击退出时，则将缓存中这一对数据清空，并去登录页面重新获取一对appId和appSecret。</p>
-				<p>退出后若在其它功能页面访问其它数据接口，发送ajax后台在验证appId时，会发现这是一个无效的appId，同样会提示过期，然后重新登录。</p>
-				<p>因为我的数据请求过程中需要用到appId和appSecret，所以在登录成功之后，将这一对数据存入缓存中，在接下来的过程中都是从缓存中拿appId和appSecret来使用。</p>
-				<p>点击退出时，则将缓存中这一对数据清空，并去登录页面重新获取一对appId和appSecret。</p>
-				<p>退出后若在其它功能页面访问其它数据接口，发送ajax后台在验证appId时，会发现这是一个无效的appId，同样会提示过期，然后重新登录。</p>
-				<p>因为我的数据请求过程中需要用到appId和appSecret，所以在登录成功之后，将这一对数据存入缓存中，在接下来的过程中都是从缓存中拿appId和appSecret来使用。</p>
-				<p>点击退出时，则将缓存中这一对数据清空，并去登录页面重新获取一对appId和appSecret。</p>
-				<p>退出后若在其它功能页面访问其它数据接口，发送ajax后台在验证appId时，会发现这是一个无效的appId，同样会提示过期，然后重新登录。</p>
-				{/*}
-					<p>\r\n\t\u67e5\u770b\u4ee3\u7801\u8be6\u60c5\u53ef\u4ee5\u79fb\u6b65\u81f3github:<span class=\"openUrl textline red\">https:\/\/github.com\/jingjingke\/scroll-select<\/span> \r\n<\/p>\r\n<p>\r\n\t\u5f53\u524d\u4e3b(master)\u5206\u652f\u4e3aJQ\u5b9e\u73b0\uff0cjs-dev\u5206\u652f\u5219\u4e3a\u539f\u751fJS\u5b9e\u73b0\u7684\u4ee3\u7801\uff0c\u672a\u538b\u7f29\u7684\u4ee3\u7801\u5927\u6982\u572815KB\u5de6\u53f3\uff0c\u538b\u7f29\u540e\u57288K\u5de6\u53f3\u3002\u76ee\u524d\u4e24\u4e2a\u5206\u652f\u7684\u6548\u679c\u5df2\u7ecf\u57fa\u672c\u5b8c\u6210\u3002\r\n<\/p>\r\n<p>\r\n\t\u56e0\u4e3a\u4ee3\u7801\u6709400-500\u884c\uff0c\u6240\u4ee5\u4e0b\u9762\u53ea\u622a\u53d6\u90e8\u5206\u7528\u4e8e\u8bf4\u660e\u7528\u6cd5\u548c\u6ce8\u610f\u4e8b\u9879\u3002\r\n<\/p>\r\n<pre class=\"prettyprint lang-js\">\/\/\u4e3b\u8981\u4f7f\u7528\u65b9\u6cd5\uff1a\r\nscrollSelect.go()\r\n\r\n\/\/\u53ef\u4f20\u53c2\u6570\r\ndata\t\/\/[json]\u53ea\u7701\u5e02\u533a\u624d\u9700\u8981\u4f20\u5165data\r\nlevel   \/\/[number](\u5fc5\u9700)\u8054\u52a8\u7b49\u7ea7\uff08\u76ee\u524d\u67091\u30012\u30013\u7ea7\uff09\r\ntype    \/\/[str](\u5fc5\u9700)\u5f53\u524d\u53ea\u652f\u6301\u7701\u5e02\u533a\u5730\u5740\uff08address\uff09\u548c\u65e5\u671f\uff08calendar\uff09\r\n<\/pre>\r\n<p>\r\n\t\u56e0\u4e3aJQ\u7684\u9009\u62e9\u5668\u4f7f\u7528\u6bd4\u8f83\u65b9\u4fbf\uff0c\u6240\u4ee5JQ\u6211\u63d0\u793a\u4e86\u4e24\u4e2a\u4f20\u9009\u62e9\u5668\u7684\u5bf9\u8c61\uff0celArr\u4e3a\u4e3b\u8981\u83b7\u53d6\u4e0e\u586b\u5145\u503c\u7684\u9009\u62e9\u5668(\u8868\u5355\u5143\u7d20)\uff0cel\u5219\u4e3a\u975e\u8868\u5355\u5143\u7d20\u5b58\u653e\u62fc\u5408\u6216\u683c\u5f0f\u8fc7\u7684\u9009\u62e9\u5668--\u5982\u201c2017-1-15\u201d\u53ef\u4ee5\u5728\u4ee3\u7801\u4e2d\u8bbe\u7f6e\u8fd4\u56de\u201c2017\u5e741\u670815\u65e5\u201d\u7b49\uff0c\u800cel\u4e5f\u53ef\u4ee5\u4e0d\u4f20\u503c\u3002\r\n<\/p>\r\n<pre class=\"prettyprint lang-js\">\/\/JQ\u53ef\u4f20\u7684\r\nelArr   \/\/[str](\u5fc5\u9700)\u4f20\u5165\u8868\u5355\u7684\u9009\u62e9\u5668\u540d\u5982#div\u6216.div\uff0c\u7528\u4e8e\u83b7\u53d6\u9ed8\u8ba4\u503c\u4ee5\u53ca\u786e\u5b9a\u540e\u5c06\u503c\u6dfb\u5165\r\nel      \/\/[str]\u8fd9\u4e2a\u6309\u9700\u6765\u4f20\u975e\u8868\u5355\u9009\u62e9\u5668\uff0c\u7528\u4e8e\u5c06\u9ed8\u8ba4\u503c\u4ee5\u67d0\u79cd\u683c\u5f0f\u6dfb\u5165\r\n<\/pre>\r\n<p>\r\n\t\u53e6\u5916JS\u7684\u9009\u62e9\u5668\u53ea\u63d0\u4f9b\u4e86el\u4f20\u9012ID\u9009\u62e9\u5668\uff0c\u800c\u8868\u5355\u5143\u7d20\u5219\u5728JS\u4ee3\u7801\u4e2d\u7ecf\u8fc7getElementsTagName\u8fdb\u884c\u83b7\u53d6\u3002\r\n<\/p>\r\n<pre class=\"prettyprint lang-js\">el      \/\/[str]\u4f20\u9012\u4e3aId\u9009\u62e9\u5668\u540d\r\n<\/pre>\r\n<p>\r\n\t\u4f7f\u7528\u65f6\u9700\u8981\u6ce8\u610f\uff1a\r\n<\/p>\r\n<p>\r\n\t(1)\u5982\u4e4b\u524d\u5982\u8ff0\uff0c\u4f20\u5165\u9009\u62e9\u5668elArr\u548cel\u7684\u533a\u522b\u3002\u5728JQ\u4e0eJS\u4e2d\u4e3b\u8981\u5dee\u522b\u5c31\u5728\u83b7\u53d6\u9ed8\u8ba4\u503c\u4ee5\u53ca\u5411DOM\u4e2d\u586b\u5145\u503c\u65f6\u7684\u5dee\u5f02\u3002\u524d\u8005\u662f\u76f4\u63a5\u6307\u5411\u8868\u5355\u5143\u7d20\uff0c\u800c\u540e\u8005\u5219\u662f\u5728ID\u9009\u62e9\u5668\u4e0b\u518d\u5411\u4e0b\u67e5\u627e\u4e00\u5c42\u3002\r\n<\/p>\r\n<p>\r\n\t\u53ef\u67e5\u770bscroll-select.js\u504f\u5411\u4e0a\u9762\u7684\u4ee3\u7801\uff1a\r\n<\/p>\r\n<pre class=\"prettyprint lang-js\">\/\/JQ\r\n$(param.elArr).each(function(index){\r\n    _obj.value[index] = $(this).val();\r\n});\r\n\r\n\/\/JS\r\n_obj.ipt = document.getElementById(param.el).getElementsByTagName('input');\r\nfor(var i=0; i &lt; _obj.ipt.length; i++){ _obj.value[i] = _obj.ipt[i].value; } <\/pre>\r\n<p>\r\n\t(2)\u5173\u4e8e\u5411DOM\u586b\u503cel,elArr\r\n<\/p>\r\n<p>\r\n\t\u6211\u539f\u5148\u7684\u662f\u60f3\u4f7f\u7528\"2017\u5e743\u67083\u65e5\"\u586b\u5165input\u4e2d\uff0c\u4f46\u662f\u5b9e\u9645\u4f20\u9012\u7ed9\u63a5\u53e3\u7684\u65e5\u671f\uff0c\u9700\u8981\u7684\u662f\u201c2017-3-3\u201d\u8fd9\u79cd\u65e5\u671f\u683c\u5f0f\uff0c\u82e5\u60f3\u7ee7\u7eed\u4f7f\u7528\u5e74\u6708\u65e5\u6587\u5b57\u7684\uff0c\u5219\u9700\u8981\u4e24\u4e2ainput\u3002\u53e6\u5916\u7701\u5e02\u533a\u4e5f\u662f\u5206\u522b\u5bf9\u5e94\u6709\u4e09\u4e2ainput\uff0c\u4f46\u6211\u60f3\u4f7f\u7528\u4e00\u4e2ainput\u8bb0\u5f55\u7701\u5e02\u533a\u5408\u8d77\u6765\u7684\u5b57\u7b26\u4e32\u3002\u6240\u4ee5\u4f7f\u7528\u4e24\u4e2ael\u3001elArr\u9009\u62e9\u5668\u5c31\u6210\u4e86\u5fc5\u987b\u3002<br \/>\r\n\u4f46\u662f\u5728\u540e\u9762JS\u539f\u751f\u4ee3\u7801\u4e2d\u6211\u5c31\u6ca1\u6709\u7279\u522b\u6307\u51fa\uff0c\u5982\u679c\u9700\u8981\u4f7f\u7528\u7684\u8bdd\u53ef\u4ee5\u5728$submit\u7684\u7ed1\u5b9a\u7684\u70b9\u51fb\u7684\u4e8b\u70b9\u4e2d\u6765\u8fdb\u884c\u4fee\u6539\u3002\r\n<\/p>\r\n<p>\r\n\t\u4fee\u6539\u7684\u4ee3\u7801\u4e5f\u662f\u5dee\u4e0d\u591a\u7684\uff0c\u4e0d\u8fc7\u53ef\u4ee5\u5148\u770b\u4e00\u4e0b\u586b\u503c\r\n<\/p>\r\n<pre class=\"prettyprint lang-js\">\/\/JQ\r\nvar str ='';\r\n$(param.elArr).each(function(index){\r\n    str += _obj.value[index];\r\n    $(this).val(_obj.value[index]);\r\n})\r\n\/\/\u82e5\u9700\u8981\u5411\u7701\u5e02\u533a\u586b\u503c\u7684\u8bdd\u53ef\u4ee5\u4f7f\u7528\u4e0b\u9762\u8fd9\u79cd\uff08\u8868\u5355\u5143\u7d20\u7528val,\u975e\u8868\u5355\u5143\u7d20\u7528html\uff09\r\n$(param.el).html(str)\r\n\r\n\r\n\/\/JS\r\nvar str ='';\r\nfor(var i=0; i &lt; _obj.ipt.length; i++){ str += _obj.value[i]; _obj.ipt[i].value = _obj.value[i]; } \/\/\u82e5\u9700\u586b\u503c\u5219\u9700\u8981\u5148\u83b7\u53d6DOM\u8282\u70b9\u518d\u8fdb\u884c\u8d4b\u503c document.getElementById(param.el).getElementsByTagName('span')[0].innerHTML = str; <\/pre>\r\n<p>\r\n\t\u8fd9\u8fb9\u4e3a\u4e86\u65b9\u4fbf\u53ea\u9009\u4e86\u7701\u5e02\u533a\u586b\u503c\uff0c\u65e5\u671f\u7684\u586b\u503c\u5219\u548c\u4e0a\u9762\u7684\u4ee3\u7801\u610f\u601d\u5dee\u4e0d\u591a\u3002\r\n<\/p>\r\n<p>\r\n\t(3)\u7ed1\u5b9a\u4e8b\u4ef6\u7684\u5c0f\u7455\u75b5\r\n<\/p>\r\n<p>\r\n\t\u5728\u7ed1\u5b9a\u4e8b\u4ef6\u7684\u5730\u65b9\uff0c\u6211\u5728\u5199demo\u7684\u65f6\u5019\u5e76\u6ca1\u6709\u4e00\u81f4\u5316\u3002\u5728html\u7684\u91cc\u9762\u6211\u4f7f\u7528\u90fd\u662fclick,\u800c\u5728JS\u4e2d\u4f7f\u7528\u7684\u662f\u6839\u636e\u79fb\u52a8\u7aef\u4e8b\u4ef6\u7ed1\u5b9a\u7684touch\/mouse\u4e8b\u4ef6\uff0c\u8fd9\u5c31\u5bfc\u81f4\u4e86\u5982\u679c\u786e\u5b9a\u53d6\u6d88\u6309\u94ae\u4e0e\u8868\u5355\u91cd\u53e0\u65f6\uff0c\u4f1a\u53d1\u751f\u603b\u662f\u5f39\u51fa\u7684\u95ee\u9898\uff0c\u5728\u5b9e\u9645\u4e2d\u7edf\u4e00\u7ed1\u5b9a\u4e8b\u4ef6\u5c31\u53ef\u4ee5\u4e86\u3002\r\n<\/p>\r\n<p>\r\n\t\u67e5\u770b\u6548\u679c\u56fe\uff1a<span class=\"openUrl textline blue\">https:\/\/jingjingke.github.io\/scroll-select\/<\/span><br \/>\r\nJQ\u4ee3\u7801\uff1a<span class=\"openUrl textline blue\">https:\/\/github.com\/jingjingke\/scroll-select\/blob\/master\/js\/scroll-select.js<\/span><br \/>\r\nJS\u4ee3\u7801\uff1a<span class=\"openUrl textline blue\">https:\/\/github.com\/jingjingke\/scroll-select\/blob\/js-dev\/js\/scroll-select.js<\/span>\r\n<\/p>\r\n<p>\r\n\t\u4ee3\u7801\u8fd8\u6709\u5f85\u8fd8\u5584\u7684\u5730\u65b9\uff0c\u6b22\u8fce\u4e0b\u65b9\u62cd\u7816\uff0c\u6216\u53bbgithub\u4e0a\u9762\u63d0Issues\r\n<\/p>","description":"\u56e0\u4e3a\u9875\u9762\u9700\u6c42\u505a\u4e00\u4e2a\u4effios\u7684\u65e5\u671f\u4e09\u8054\u6eda\u52a8\uff0c\u5728\u7f51\u4e0a\u641c\u7d22","keywords":"\u4effios\u7701\u5e02\u533a\u8054\u52a8,\u4effios\u65e5\u671f\u8054\u52a8,ios\u591a\u8054\u6eda\u52a8,IOS\u65e5\u671f\u9009\u62e9\u6eda\u52a8
-				{*/}
-			</div>
-		)
+		if(this.props.des === undefined){
+			return (<div className="article-detail"></div>)
+		}else{
+			//判断是否有缩略图
+			if(this.props.pic===''){
+				var pic = (<p className="disNone"></p>)
+			}else{
+				var pic = (<p className="center"><img src={"http://www.jingjingke.com/"+this.props.pic} alt="缩略图" /></p>)
+			}
+			//正式渲染
+			return (
+				<div className="article-detail">
+					<p>{this.props.des}</p>
+					{pic}
+					<div dangerouslySetInnerHTML={{__html:this.props.body}}></div>
+				</div>
+			)
+		}
 	}
 }

@@ -1,11 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component,PropTypes } from 'react'
 
 export default class extends Component {
+	static propTypes = {
+		title:PropTypes.string,
+		sdate:PropTypes.string,
+		source:PropTypes.string
+	}
 	render(){
 		return (
 			<div className="header-caption">
-				<h1>自制仿IOS日期选择滚动插件可日期可省市区联动自制仿</h1>
-				<p className="caption-des">2016年10月5日 by 井井客整理</p>
+				<h1>{this.props.title}</h1>
+				<p className="caption-des">{this.props.sdate} by {this.props.source}</p>
 			</div>
 		)
 	}

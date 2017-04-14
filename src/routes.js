@@ -13,6 +13,6 @@ export default {
 	},
 	childRoutes:[
 		{ path:'list/:type/:value', component:List},
-		{ path:'detail', component:Detail}
+		{ path:'detail/:aid', component:Detail}
 	]
 }

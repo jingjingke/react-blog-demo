@@ -1,4 +1,5 @@
 import React, { Component,PropTypes } from 'react'
+import {Link} from 'react-router'
 
 export default class extends Component {
 	static propTypes = {
@@ -11,14 +12,14 @@ export default class extends Component {
 		}
 		return (
 			<li>
-				<h2><a href="#">{item.title}</a></h2>
+				<h2><Link to={'/detail/'+item.aid}>{item.title}</Link></h2>
 				<div className="article-des">
-					<a href="#"><img src={"http://www.jingjingke.com/"+item.litpic} alt="缩略图" /></a>
+					<Link to={'/detail/'+item.aid}><img src={"http://www.jingjingke.com/"+item.litpic} alt="缩略图" /></Link>
 					<p>{item.description}</p>
 				</div>
 				<div className="article-source">
-					<a href="#" className="article-more">MORE</a>
-					<p className="article-source-info"><a href="#">{item.senddate}</a> by <a href="#">{item.source}</a></p>
+					<Link to={'/detail/'+item.aid} className="article-more">MORE</Link>
+					<p className="article-source-info"><b>{item.senddate}</b> by <b>{item.source}</b></p>
 				</div>
 			</li>
 		)

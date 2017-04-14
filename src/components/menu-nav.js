@@ -1,4 +1,5 @@
 import React, { Component,PropTypes } from 'react'
+import {Link} from 'react-router'
 
 export default class extends Component {
 	static propTypes = {
@@ -9,7 +10,7 @@ export default class extends Component {
 		if(datas.length > 0){
 			var list = datas.map((item,index)=>{
 				return (
-					<li key={index}>{item.typename}</li>
+					<li key={index}><Link to={"/list/typeid/"+item.id}>{item.typename}</Link></li>
 				)
 			})
 		}
@@ -19,7 +20,7 @@ export default class extends Component {
 					<input type="text" placeholder="search" />
 				</form>
 				<ul className="menu-list">
-					<li>首页</li>
+					<li><Link to='/'>首页</Link></li>
 					{list}
 				</ul>
 				<p className="menu-code">

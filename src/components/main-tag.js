@@ -1,4 +1,5 @@
 import React, { Component,PropTypes } from 'react'
+import {Link} from 'react-router'
 
 export default class extends Component {
 	static propTypes = {
@@ -14,7 +15,7 @@ export default class extends Component {
 			if(datas.length > 0){
 				var list = datas.map((item,index)=>{
 					return (
-						<a key={index}>{item.tag}</a>
+						<Link key={index} to={"/list/tagid/"+item.id}>{item.tag}</Link>
 					)
 				})
 			}

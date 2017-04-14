@@ -1,15 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component,PropTypes } from 'react'
 import {Link} from 'react-router'
 
 export default class extends Component {
+	static propTypes = {
+		type:PropTypes.object
+	}
 	render(){
-		return (
-			<p className="main-site">
-				当前位置：
-				<Link to="/">首页</Link>-
-				<span>前端笔记</span>-
-				<span>列表页</span>
-			</p>
-		)
+		if(this.props.type === undefined){
+			return (<p className="main-site"></p>)
+		}else{
+			//判断传的是typeid还是tagid
+			var showtype;
+			if(this.props.type.type === 'typeid'){
+				showtype = (<span>{this.props.type.typename}</span>)
+			}else{
+				showtype = (<span>{this.props.type.tag}</span>)
+			}
+			
+			return (
+				<p className="main-site">
+					当前位置：
+					<Link to="/">首页</Link>-
+					{showtype}-
+					<span>列表页</span>
+				</p>
+			)
+		}
 	}
 }

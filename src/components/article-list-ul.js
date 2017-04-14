@@ -16,20 +16,24 @@ export default class extends Component {
 		const datas = this.props.data;
 		if(datas.length > 0){
 			//每页多少
-			let pageSize = 12;
+			const pageSize = 12;
 			//总共多少页
-			var pageTotal = 0;
+			var pageTotal = parseInt(datas.length/pageSize,10);
 			//最后一页（小于或等于pageSize）
-			let pageLast = datas.length%pageSize;
-			//计算需要分多少页
-			pageTotal = pageLast===0 ? parseInt(datas.length/pageSize) : parseInt(datas.length/pageSize) + 1;
+			const pageLast = datas.length%pageSize;
+			//若pageLast不为0，则总数需要加1
+			if( pageLast !== 0 ){
+				pageTotal++;
+			}
 			
+			//整理list
 			var list = datas.slice(this.state.pageNow*pageSize,(this.state.pageNow+1)*pageSize).map((item,index)=>{
 				return (
 					<ArticleListLi key={index} data={item} />
 				)
 			})
 		}
+		
 		return (
 			<div>
 				<ul className="article-list">

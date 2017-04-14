@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,PropTypes } from 'react'
 import MenuToggle from '../components/menu-toggle'
 import HeadCaptionIndex from '../components/head-caption-index'
 import MainTag from '../components/main-tag'
@@ -8,6 +8,9 @@ import Footer from '../components/footer'
 import axios from 'axios'
 
 export default class extends Component {
+	static propTypes = {
+		tagData:PropTypes.array
+	}
 	constructor(props){
 		super(props)
 		this.state = {
@@ -29,7 +32,7 @@ export default class extends Component {
 					<HeadCaptionIndex />
 				</div>
 				<div className="main">
-					<MainTag />
+					<MainTag data={this.props.tagData} />
 					<ArticleListUl data={this.state.data} />
 					<Footer />
 				</div>

@@ -1,30 +1,16 @@
-import React, { Component } from 'react'
-
-import axios from 'axios'
+import React, { Component,PropTypes } from 'react'
 
 export default class extends Component {
-	constructor(props){
-		super(props)
-		this.state = {
-			loading:true,
-			data:[]
-		}
-	}
-	componentDidMount(){
-		axios.get('tag.php').then(response=>{
-			this.setState({
-				loading:false,
-				data:response.data
-			})
-		})
+	static propTypes = {
+		data:PropTypes.array
 	}
 	render(){
-		if(this.state.ok){
+		if(this.props.data.length === 0){
 			return (
 				<div></div>
 			)
 		}else{
-			const datas = this.state.data;
+			const datas = this.props.data;
 			if(datas.length > 0){
 				var list = datas.map((item,index)=>{
 					return (

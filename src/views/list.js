@@ -10,7 +10,8 @@ import axios from 'axios'
 export default class extends Component {
 	static propTypes = {
 		typeData:PropTypes.array,
-		tagData:PropTypes.array
+		tagData:PropTypes.array,
+		menuClick:PropTypes.func
 	}
 	constructor(props){
 		super(props)
@@ -80,7 +81,7 @@ export default class extends Component {
 		return (
 			<div className="container">
 				<div className="header">
-					<MenuToggle />
+					<MenuToggle thisclick={this.props.menuClick} />
 					<HeadCaptionList type={typeInfo} />
 				</div>
 				<div className="main">

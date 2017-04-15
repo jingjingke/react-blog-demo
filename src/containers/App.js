@@ -9,7 +9,8 @@ class App extends Component {
 		super(props)
 		this.state = {
 			type:[],
-			tag:[]
+			tag:[],
+			menu:false
 		}
 	}
 	componentDidMount(){
@@ -20,13 +21,20 @@ class App extends Component {
 			this.setState({tag:response.data})
 		})
 	}
+	menuHandleClick(){
+		this.setState({
+			menu:!this.state.menu
+		})
+	}
   render() {
+  	var styleName = this.state.menu?' menu-open':'';
     return (
-      <div className="App">
+      <div className={'App'+styleName}>
         <MenuNav data={this.state.type}/>
         {this.props.children && React.cloneElement(this.props.children,{
         	typeData:this.state.type,
-        	tagData:this.state.tag
+        	tagData:this.state.tag,
+        	menuClick:this.menuHandleClick.bind(this)
         })}
       </div>
     );

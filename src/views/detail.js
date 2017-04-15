@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,PropTypes } from 'react'
 import MenuToggle from '../components/menu-toggle'
 import HeadCaptionDetail from '../components/head-caption-detail'
 import MainSiteDetail from '../components/main-site-detail'
@@ -8,6 +8,9 @@ import Footer from '../components/footer'
 import axios from 'axios'
 
 export default class extends Component {
+	static propTypes = {
+		menuClick:PropTypes.func
+	}
 	constructor(props){
 		super(props)
 		this.state = {
@@ -45,7 +48,7 @@ export default class extends Component {
 		return (
 			<div className="container">
 				<div className="header">
-					<MenuToggle />
+					<MenuToggle thisclick={this.props.menuClick} />
 					<HeadCaptionDetail title={this.state.data.title} sdate={this.state.data.senddate} source={this.state.data.source}/>
 				</div>
 				<div className="main">

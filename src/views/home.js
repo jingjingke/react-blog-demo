@@ -13,15 +13,21 @@ export default class extends Component {
 	}
 	constructor(props){
 		super(props)
+		this.mounted = true
 		this.state = {
 			data:[]
 		}
 	}
+	componentWillUnmount(){
+		this.mounted = false
+	}
 	componentDidMount(){
 		axios.get('list.php').then(response=>{
-			this.setState({
-				data:response.data
-			})
+			if(this.mounted){
+				this.setState({
+					data:response.data
+				})
+			}
 		})
 	}
 	render(){

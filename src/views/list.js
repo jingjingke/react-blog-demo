@@ -14,10 +14,14 @@ export default class extends Component {
 	}
 	constructor(props){
 		super(props)
+		this.mounted = true
 		this.state = {
 			data:[],
 			params:{}
 		}
+	}
+	componentWillUnmount(){
+		this.mounted = false
 	}
 	componentDidMount(){
 		//用state接收路由参数
@@ -36,10 +40,12 @@ export default class extends Component {
 		axios.get('list.php',{
 			params:setData
 		}).then(response=>{
-			this.setState({
-				data:response.data,
-				params:params
-			})
+			if(this.mounted){
+				this.setState({
+					data:response.data,
+					params:params
+				})
+			}
 		})
 		//ajax完成		
 	}

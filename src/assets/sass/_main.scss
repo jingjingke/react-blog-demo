@@ -1,8 +1,10 @@
 @charset "UTF-8";
 .main {
-    float: left;
-    width: 59.9%;
-    height: 100%;
+    position: relative;
+    top: 0;
+    left: 40%;
+    width: 60%;
+    background: #fff;
     overflow-y: auto;
 }
 

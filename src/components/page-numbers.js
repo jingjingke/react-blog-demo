@@ -6,12 +6,6 @@ export default class extends Component {
 		now:PropTypes.number,
 		thisclick:PropTypes.func
 	}
-//	constructor(props){
-//		super(props)
-//		this.state = {
-//			pageNow:1
-//		}
-//	}
 	render(){
 		if(this.props.total === undefined){
 			//如果数据还没有传过来
@@ -29,7 +23,8 @@ export default class extends Component {
 			//判断如果是第一页或最后一页隐藏
 			if(now === 1){
 				prev = (<span className="prev disNone">无</span>);
-			}else if(now === total){
+			}
+			if(now === total){
 				next = (<span className="next disNone">无</span>);
 			}
 			

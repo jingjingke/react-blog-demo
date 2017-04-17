@@ -9,8 +9,27 @@ export default class extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			pageNow:0
+			pageNow:1
 		}
+	}
+	handleGoPage(event){
+		//获取分页上面的文字
+		var thisText = event.target.innerHTML;
+		//判断是下一页，上一页还是指定数字
+		if(thisText === '&gt;'){
+			this.setState({
+				pageNow:this.state.pageNow + 1
+			})
+		}else if(thisText === '&lt;'){
+			this.setState({
+				pageNow:this.state.pageNow - 1
+			})
+		}else{
+			this.setState({
+				pageNow:parseInt(thisText,10)
+			})
+		}
+		//完
 	}
 	render(){
 		const datas = this.props.data;
@@ -27,7 +46,7 @@ export default class extends Component {
 			}
 			
 			//整理list
-			var list = datas.slice(this.state.pageNow*pageSize,(this.state.pageNow+1)*pageSize).map((item,index)=>{
+			var list = datas.slice((this.state.pageNow-1)*pageSize,this.state.pageNow*pageSize).map((item,index)=>{
 				return (
 					<ArticleListLi key={index} data={item} />
 				)
@@ -39,7 +58,7 @@ export default class extends Component {
 				<ul className="article-list">
 					{list}
 				</ul>
-				<PageNumbers total={pageTotal} now={this.state.pageNow} />
+				<PageNumbers total={pageTotal} now={this.state.pageNow} thisclick={this.handleGoPage.bind(this)} />
 			</div>
 		)
 	}

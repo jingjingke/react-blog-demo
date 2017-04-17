@@ -21,10 +21,11 @@
         border: 1px solid #e8e8e8;
         @extend .fz16;
     }
-    a:hover {
+    a:hover,span:hover {
         color: #333;
         background: #e6e6e6;
         border-color:#adadad;
+        cursor: pointer;
     }
     .current {
         background-color: #f1f1f1;

@@ -3,8 +3,15 @@ import React, { Component,PropTypes } from 'react'
 export default class extends Component {
 	static propTypes = {
 		total:PropTypes.number,
-		now:PropTypes.number
+		now:PropTypes.number,
+		thisclick:PropTypes.func
 	}
+//	constructor(props){
+//		super(props)
+//		this.state = {
+//			pageNow:1
+//		}
+//	}
 	render(){
 		if(this.props.total === undefined){
 			//如果数据还没有传过来
@@ -17,10 +24,10 @@ export default class extends Component {
 			const now = this.props.now;
 			
 			//上下页默认时
-			var prev = (<a href="#" className="prev">&lt;</a>)
-			var next = (<a href="#" className="next">&gt;</a>)
+			var prev = (<span className="prev" onClick={this.props.thisclick}>&lt;</span>)
+			var next = (<span className="next" onClick={this.props.thisclick}>&gt;</span>)
 			//判断如果是第一页或最后一页隐藏
-			if(now === 0){
+			if(now === 1){
 				prev = (<span className="prev disNone">无</span>);
 			}else if(now === total){
 				next = (<span className="next disNone">无</span>);
@@ -28,13 +35,15 @@ export default class extends Component {
 			
 			//所有页码
 			var list = [];
-			for(var i = 0; i < total; i++){
+			var styleName;
+			for(var i = 1; i <= total; i++){
 				var thisEle;
-				if(i === now){
-					thisEle = (<span key={i+1} className="current">{i+1}</span>)
+				if(i===now){
+					styleName='current'
 				}else{
-					thisEle = (<a key={i+1} href="#">{i+1}</a>)
+					styleName='';
 				}
+				thisEle = (<span key={i} className={styleName} onClick={this.props.thisclick}>{i}</span>)
 				list.push(thisEle)
 			}
 			

@@ -27,12 +27,12 @@
 //菜单模块(正常隐藏)
 .menu-nav {
     background-color: #222;
-    width: 240px;
+    width: 180px;
     height: 100%;
     padding: 0 30px;
     overflow: auto;
     position: fixed;
-    left:-300px;
+    left:-240px;
     top: 0;
     @extend .tra-all;
 }
@@ -52,7 +52,7 @@
         }
     }
     .container {
-        left: 300px;
+        left: 240px;
     }
     .menu-nav {
         left: 0;
@@ -60,18 +60,31 @@
 }
 
 
-//菜单--search
-.menu-find {
-    margin-top: 20px;
-    input {
-        height: 18px;
-        line-height: 18px;
-        padding: 8px 3%;
-        border: 0;
-        width: 94%;
+//菜单--search[取消这个功能]
+//.menu-find {
+//  margin-top: 20px;
+//  input {
+//      height: 18px;
+//      line-height: 18px;
+//      padding: 8px 3%;
+//      border: 0;
+//      width: 94%;
+//  }
+//  button,select { display: none;}
+//}
+
+//菜单-头像
+.menu-avatar {
+    width: 120px;
+    height: 120px;
+    margin: 30px auto 0;
+    border-radius: 60px;
+    overflow: hidden;
+    img {
+        width: 100%;
     }
-    button,select { display: none;}
 }
+
 
 //菜单--列表
 .menu-list {

@@ -16,9 +16,7 @@ export default class extends Component {
 		}
 		return (
 			<div className="menu-nav">
-				<form className="menu-find">
-					<input type="text" placeholder="search" />
-				</form>
+				<p className="menu-avatar"><img src="https://avatars3.githubusercontent.com/u/24471671?v=3&s=460" alt="头像" /></p>
 				<ul className="menu-list">
 					<li><Link to='/'>首页</Link></li>
 					{list}

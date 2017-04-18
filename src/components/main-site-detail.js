@@ -1,5 +1,6 @@
 import React, { Component,PropTypes } from 'react'
 import {Link} from 'react-router'
+import MainSiteBack from './main-site-back'
 
 export default class extends Component {
 	static propTypes = {
@@ -15,6 +16,7 @@ export default class extends Component {
 					<Link to={"/list/typeid/"+this.props.typeid}>{this.props.typename}</Link>-
 					<span>{this.props.title}</span>-
 					<span>详情</span>
+					<MainSiteBack />
 			</p>
 		)
 	}

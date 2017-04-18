@@ -1,5 +1,6 @@
 import React, { Component,PropTypes } from 'react'
 import {Link} from 'react-router'
+import MainSiteBack from './main-site-back'
 
 export default class extends Component {
 	static propTypes = {
@@ -23,6 +24,7 @@ export default class extends Component {
 					<Link to="/">首页</Link>-
 					{showtype}-
 					<span>列表页</span>
+					<MainSiteBack />
 				</p>
 			)
 		}

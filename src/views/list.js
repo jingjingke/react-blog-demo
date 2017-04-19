@@ -26,6 +26,8 @@ export default class extends Component {
 		const params = this.props.params
 		//判断state保存的id否有变化
 		if(this.state.type !== params.type || this.state.id !== params.value){
+			//滚动条返回顶部(只有栏目变化时)
+			window.scrollTo(0,0)
 			//发送ajax
 			this.setAjax();
 		}

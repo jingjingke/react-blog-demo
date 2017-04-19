@@ -22,11 +22,15 @@ export default class extends Component {
 	componentDidUpdate(){
 		//判断state保存的id否有变化
 		if(this.state.aid !== this.props.params.aid){
+			//滚动条返回顶部
+			window.scrollTo(0,0)
 			//发送ajax
 			this.setAjax();
 		}
 	}
 	componentDidMount(){
+		//滚动条返回顶部
+		window.scrollTo(0,0)
 		//第一次发送ajax
 		this.setAjax();
 	}

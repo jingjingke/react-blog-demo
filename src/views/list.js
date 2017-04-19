@@ -6,6 +6,7 @@ import ArticleListUl from '../components/article-list-ul'
 import Footer from '../components/footer'
 
 import axios from 'axios'
+import store from 'store'
 
 export default class extends Component {
 	static propTypes = {
@@ -15,43 +16,55 @@ export default class extends Component {
 	}
 	constructor(props){
 		super(props)
-		this.mounted = true
 		this.state = {
 			data:[],
-			params:{}
+			type:'',
+			id:''
 		}
 	}
-	componentWillUnmount(){
-		this.mounted = false
+	componentDidUpdate(){
+		const params = this.props.params
+		//判断state保存的id否有变化
+		if(this.state.type !== params.type || this.state.id !== params.value){
+			//发送ajax
+			this.setAjax();
+		}
 	}
 	componentDidMount(){
-		//用state接收路由参数
-		this.setState({
-			params:this.props.params
-		})
-		this.setAajx()
+		//第一次发送ajax
+		this.setAjax();
 	}
-	setAajx(){
+	setAjax(){
 		//接收props参数
 		const params = this.props.params
-		//计算需要发送ajax时用的参数
-		const setData = {};
-		setData[params.type] = params.value;
-		//发送ajax--列表
-		axios.get('list.php',{
-			params:setData
-		}).then(response=>{
-			if(this.mounted){
-				this.setState({
-					data:response.data,
-					params:params
-				})
-			}
+		//将变化的id及时存入state
+		this.setState({
+			type:params.type,
+			id:params.value
 		})
-		//ajax完成		
+		//判断缓存中是否有数据
+		if(store.enabled && store.get('list-'+params.type+params.value) !== undefined){
+			this.setState({
+				data:store.get('list-'+params.type+params.value)
+			})
+		}else{
+			//计算需要发送ajax时用的参数
+			const setData = {};
+			setData[params.type] = params.value;
+			//发送ajax--列表
+			axios.get('list.php',{
+				params:setData
+			}).then(response=>{
+				if(store.enabled) store.set('list-'+params.type+params.value,response.data);
+				this.setState({
+					data:response.data
+				})
+			})
+			//ajax完成
+		}
 	}
 	handleInfo(arr){
-		var props = this.props.params;
+		const props = this.props.params;
 		var info = {};
 		if(arr.length > 0){
 			for(let i=0; i < arr.length; i++){
@@ -70,12 +83,6 @@ export default class extends Component {
 			typeInfo = this.handleInfo(this.props.typeData)
 		}else{
 			typeInfo = this.handleInfo(this.props.tagData)
-		}
-		
-		//判断参数是否存在，并且判断props参数与state参数是否一致(这样判断保证只执行一次，不会重复执行)
-		if(this.state.params.type !== undefined && this.state.params !== this.props.params){
-			//实际就是当路由参数变化时发送ajax
-			this.setAajx()
 		}
 		
 		return (

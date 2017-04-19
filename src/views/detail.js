@@ -6,6 +6,7 @@ import ArticleDetail from '../components/article-detail'
 import Footer from '../components/footer'
 
 import axios from 'axios'
+import store from 'store'
 
 export default class extends Component {
 	static propTypes = {
@@ -15,36 +16,48 @@ export default class extends Component {
 		super(props)
 		this.state = {
 			data:[],
-			params:{}
+			aid:''
+		}
+	}
+	componentDidUpdate(){
+		//判断state保存的id否有变化
+		if(this.state.aid !== this.props.params.aid){
+			//发送ajax
+			this.setAjax();
 		}
 	}
 	componentDidMount(){
-		//用state接收路由参数
-		this.setState({
-			params:this.props.params
-		})
-		this.setAajx()
+		//第一次发送ajax
+		this.setAjax();
 	}
-	setAajx(){
+	setAjax(){
 		//接收props参数
 		const params = this.props.params
-		//发送ajax
-		axios.get('article.php',{
-			params:params
-		}).then(response=>{
-			this.setState({
-				data:response.data,
-				params:params
-			})
+		//将变化的aid及时存入state
+		this.setState({
+				aid:params.aid
 		})
-		//ajax完成
+		//判断缓存中是否有数据
+		if(store.enabled && store.get('article-'+params.aid)!== undefined){
+			this.setState({
+				data:store.get('article-' + params.aid)
+			})
+		}else{
+			//发送ajax
+			axios.get('article.php',{
+				params:params
+			}).then(response=>{
+				//是否存入缓存
+				if(store.enabled) store.set('article-'+params.aid,response.data);
+				//保存state里
+				this.setState({
+					data:response.data
+				})
+			})
+			//ajax完成
+		}
 	}
 	render(){
-		//判断参数是否存在，并且判断props参数与state参数是否一致(这样判断保证只执行一次，不会重复执行)
-		if(this.state.params.aid !== undefined && this.state.params !== this.props.params){
-			//实际就是当路由参数变化时发送ajax
-			this.setAajx()
-		}
 		return (
 			<div className="container">
 				<div className="header">

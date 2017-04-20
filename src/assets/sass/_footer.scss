@@ -8,6 +8,7 @@
     width: 56%;
     padding:28px 2%;
     line-height: 1.6;
+    @extend .tra-all;
     .link {
         color: #aaa;
         &:hover {

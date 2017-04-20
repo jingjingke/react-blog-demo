@@ -185,6 +185,8 @@
         font-size: rem(24);
         width: 94%;
         padding: rem(28) 3%;
+        transition:none;
+        right: -240px;
     }
 }
 @media only screen and (max-width:750px){

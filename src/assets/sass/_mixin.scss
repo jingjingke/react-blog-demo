@@ -9,6 +9,10 @@ $yellow:#fffbc3;
 
 $blue:#006cff;
 
+.after {
+    display: block;
+    content: '';
+}
 
 //底边
 .bor-bot {
@@ -39,3 +43,9 @@ $blue:#006cff;
     overflow: hidden;
 }
 
+//字体带省略号
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

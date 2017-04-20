@@ -1,9 +1,10 @@
 //容器
-import App from './containers/App.js'
+import App from './containers/App'
 //视图模板
-import Home from './views/home.js'
-import List from './views/list.js'
-import Detail from './views/detail.js'
+import Home from './views/home'
+import List from './views/list'
+import Detail from './views/detail'
+import Search from './views/search'
 
 export default {
 	path:'/',
@@ -13,6 +14,7 @@ export default {
 	},
 	childRoutes:[
 		{ path:'list/:type/:value', component:List},
-		{ path:'detail/:aid', component:Detail}
+		{ path:'detail/:aid', component:Detail},
+		{ path:'search', component:Search}
 	]
 }

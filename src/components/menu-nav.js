@@ -1,5 +1,6 @@
 import React, { Component,PropTypes } from 'react'
 import {Link} from 'react-router'
+import MenuNavSearch from './menu-nav-search';
 
 export default class extends Component {
 	static propTypes = {
@@ -21,6 +22,7 @@ export default class extends Component {
 					<li><Link to='/'>首页</Link></li>
 					{list}
 				</ul>
+				<MenuNavSearch />
 				<p className="menu-code">
 					<span>若有疑问可加入网站建设QQ群：169548454或用手机扫描二维码</span>
 					<img src="http://jingjingke.com/res/img/qunCode.png" alt='加QQ群' />

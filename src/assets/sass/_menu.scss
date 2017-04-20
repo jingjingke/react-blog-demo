@@ -61,17 +61,32 @@
 
 
 //菜单--search[取消这个功能]
-//.menu-find {
-//  margin-top: 20px;
-//  input {
-//      height: 18px;
-//      line-height: 18px;
-//      padding: 8px 3%;
-//      border: 0;
-//      width: 94%;
-//  }
-//  button,select { display: none;}
-//}
+.menu-find {
+    position: relative;
+    margin-top: 20px;
+    input {
+        height: 18px;
+        line-height: 18px;
+        padding: 8px 35% 8px 3%;
+        border: 0;
+        width: 62%;
+    }
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 34px;
+        padding: 0 15px;
+        background: $blue;
+        color: #fff;
+    }
+    .err {
+        color: #ff0;
+        line-height: 2em;
+        height: 2em;
+        @extend .ellipsis;
+    }
+}
 
 //菜单-头像
 .menu-avatar {
@@ -109,7 +124,7 @@
 
 //菜单--二维码
 .menu-code {
-    margin-top: 40px;
+    margin-top: 20px;
     color: #999;
     line-height:1.5;
     img {

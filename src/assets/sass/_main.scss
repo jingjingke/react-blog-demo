@@ -83,3 +83,19 @@
         }
     }
 }
+//没有搜索结果
+.search-nolist {
+    text-align: center;
+    padding: 150px 0 300px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height:2em;
+    &:before {
+        @extend .after;
+        width: 320px;
+        height: 200px;
+        margin: 0 auto 20px;
+        background: url(../img/search.png) no-repeat;
+        background-size: 100%;
+    }
+}

@@ -1,8 +1,12 @@
 @charset "UTF-8";
 //底部
 .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
     background: #000;
-    padding:28px;
+    width: 56%;
+    padding:28px 2%;
     line-height: 1.6;
     .link {
         color: #aaa;

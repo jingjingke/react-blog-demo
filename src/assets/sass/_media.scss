@@ -136,6 +136,9 @@
     .main-site {
         padding:rem(20) rem(30);
     }
+    .search-nolist {
+        font-size: rem(24);
+    }
     .article-list {
         padding:rem(80);
         li {
@@ -178,11 +181,21 @@
         }
     }
     .footer {
+        position: static;
         font-size: rem(24);
-        padding: rem(28);
+        width: 94%;
+        padding: rem(28) 3%;
     }
 }
 @media only screen and (max-width:750px){
+    .search-nolist {
+        padding: rem(165) 0 rem(320);
+        font-size: rem(28);
+        &:before {
+            width: rem(320);
+            height: rem(200);
+        }
+    }
     .article-list {
        h2{
            border-bottom: none;

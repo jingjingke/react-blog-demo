@@ -6,7 +6,7 @@
 
 ## 项目地址 ##
 
-可访问[www.showke.club/build/](www.showke.club/build/)进行浏览效果
+可访问[http://www.showke.club/build/](http://www.showke.club/build/)进行浏览效果
 
 
 ## 前置知识 ##
@@ -45,7 +45,7 @@
 
 ## 注意事项 ##
 
-### 1、如果已经下载到你的本地了，运行时还需要安装依赖 ###
+#### 1、如果已经下载到你的本地了，运行时还需要安装依赖 ####
 在已经安装yarn的前提下执行：
 
 ```pre
@@ -53,7 +53,7 @@
 ```
 如果本地没有安装yarn的话需要先安装，[可以点这里了解如何安装？](https://yarnpkg.com/zh-Hans/docs/getting-started)
 
-### 2、生成时需要修改react-scripts配置 ###
+#### 2、生成时需要修改react-scripts配置 ####
 之前在使用vue-cli脚手架时就有将publicPath改成绝对地址，在这边好像也同时需要。不过Create React App是使用react-scripts配置的，所以我是在node_modules文件夹下的react-scripts文件夹 >> config文件夹 >> paths.js文件中去修改的。找到：
 ```pre
 	publicUrl ? url.parse(publicUrl).pathname : '/'

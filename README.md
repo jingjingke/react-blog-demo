@@ -6,7 +6,7 @@
 
 ## 项目地址 ##
 
-可访问[http://www.showke.club/build/](http://www.showke.club/build/)进行浏览效果
+可访问[http://www.showke.club/](http://www.showke.club/)进行浏览效果
 
 
 ## 前置知识 ##

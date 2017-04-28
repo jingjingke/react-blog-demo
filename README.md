@@ -66,3 +66,12 @@
 ```pre
 	publicUrl ? url.parse(publicUrl).pathname : 'http://www.showke.club/build/'
 ```
+#### 3、将index.html文件生成到根目录下 ####
+默认react-script使用webpack打包时是将index.html打包在build下，若想直接就从根目录下访问，就需要将它生成在根目录下。在react-scripts文件夹 >> config文件夹 >> webpack.config.prod.js文件中找到：
+```pre
+	template: paths.appHtml,
+```
+在它下面添加一行：
+```pre
+	filename:'../index.html',
+```

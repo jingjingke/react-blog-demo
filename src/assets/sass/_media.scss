@@ -129,6 +129,7 @@
         width: 100%;
         left: 0;
     }
+    .main:after { display: none; }
     .main-site,.main-tag {
         padding: rem(20) rem(30) rem(30);
         font-size:rem(24);

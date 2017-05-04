@@ -75,3 +75,17 @@
 ```pre
 	filename:'../index.html',
 ```
+
+#### 4、默认生成时，静态js与css会有同名.map后缀的文件 ####
+若不需要.map后缀的文件，可以同第3点所在的webpack.config.prod.js文件中隐藏：
+```pre
+//	devtool: 'source-map',
+```
+
+#### 5、默认生成时，static文件夹下会有asset-manifest.json文件 ####
+若不需要该文件，可以同样在webpack.config.prod.js文件中隐藏：
+```pre
+//  new ManifestPlugin({
+//    fileName: 'asset-manifest.json'
+//  })
+```

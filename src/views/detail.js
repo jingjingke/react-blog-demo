@@ -70,7 +70,6 @@ export default class extends Component {
 		}
 	}
 	render(){
-		
 		if(this.state.isOK){
 			return (
 				<div className="container">
@@ -80,7 +79,7 @@ export default class extends Component {
 					</div>
 					<div className="main">
 						<MainSiteDetail typeid={this.state.data.typeid} typename={this.state.data.typename} title={this.state.data.title} />
-						<ArticleDetail des={this.state.data.description} body={this.state.data.body} pic={this.state.data.litpic} />
+						<ArticleDetail des={this.state.data.description} body={this.state.data.body} pic={this.state.data.litpic} id={this.state.data.id} />
 						<Footer />
 					</div>
 				</div>

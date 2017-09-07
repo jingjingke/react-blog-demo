@@ -6,6 +6,21 @@ export default class extends Component {
 		now:PropTypes.number,
 		thisclick:PropTypes.func
 	}
+	clickEvent(event){
+		// 触发父组件中定义的点击事件
+		this.props.thisclick(event)
+		// 点击的时候滚动条位置滑到顶部
+		const stop = document.body.scrollTop;
+		let num = 20;
+		var setTime = setInterval(()=>{
+			document.body.scrollTop = stop/20 * num;
+			num--;
+			if(num <= 0){
+				clearInterval(setTime)
+				document.body.scrollTop = 0
+			}
+		},10)
+	}
 	render(){
 		if(this.props.total === undefined){
 			//如果数据还没有传过来
@@ -18,8 +33,8 @@ export default class extends Component {
 			const now = this.props.now;
 			
 			//上下页默认时
-			var prev = (<span className="prev" onClick={this.props.thisclick}>&lt;</span>)
-			var next = (<span className="next" onClick={this.props.thisclick}>&gt;</span>)
+			var prev = (<span className="prev" onClick={this.clickEvent.bind(this)} >&lt;</span>)
+			var next = (<span className="next" onClick={this.clickEvent.bind(this)} >&gt;</span>)
 			//判断如果是第一页或最后一页隐藏
 			if(now === 1){
 				prev = (<span className="prev disNone">无</span>);
@@ -38,7 +53,7 @@ export default class extends Component {
 				}else{
 					styleName='';
 				}
-				thisEle = (<span key={i} className={styleName} onClick={this.props.thisclick}>{i}</span>)
+				thisEle = (<span key={i} className={styleName} onClick={this.clickEvent.bind(this)}>{i}</span>)
 				temp.push(thisEle)
 			}
 			//提取需要的页码--list正式

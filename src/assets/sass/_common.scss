@@ -19,3 +19,9 @@ a:hover { color: $blue; @extend .tra-all;}
 #root {
     .disNone { display: none;}
 }
+.txtline {
+    text-decoration: underline;
+}
+.openUrl {
+    cursor: pointer;
+}

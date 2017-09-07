@@ -18,6 +18,13 @@ export default class extends Component {
 			scriptPre.src  = 'http://www.jingjingke.com/res/js/prettify.js';
 			document.querySelector("head").appendChild(scriptPre);
 		}
+		// 设置带openUrl样式-跳转页面
+		var openList = htmlCode.querySelectorAll('.openUrl');
+		for(let i=0; i<openList.length; i++){
+			openList[i].addEventListener('click',function(){
+				window.open(this.innerText,'_self')
+			})
+		}
 	}
 	render(){
 		if(this.props.des === undefined){

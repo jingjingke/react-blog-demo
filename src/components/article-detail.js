@@ -8,6 +8,17 @@ export default class extends Component {
 		pic:PropTypes.string,
 		id:PropTypes.string
 	}
+	componentDidMount(){
+		// 获取正文DOM
+		var htmlCode = this.refs.htmlCode;
+		// 编辑正文-高亮代码
+		if(htmlCode.querySelectorAll('.prettyprint').length > 0){
+			var scriptPre = document.createElement("script");
+			scriptPre.type = "text/javascript";
+			scriptPre.src  = 'http://www.jingjingke.com/res/js/prettify.js';
+			document.querySelector("head").appendChild(scriptPre);
+		}
+	}
 	render(){
 		if(this.props.des === undefined){
 			return (<div className="article-detail"></div>)
@@ -24,7 +35,7 @@ export default class extends Component {
 				<div className="article-detail">
 					<p>{this.props.des}</p>
 					{picImg}
-					<div dangerouslySetInnerHTML={{__html:this.props.body}}></div>
+					<div dangerouslySetInnerHTML={{__html:this.props.body}} ref='htmlCode'></div>
 					<div dangerouslySetInnerHTML={{__html:shstr}} className="sohucy"></div>
 					<Sohu id={this.props.id} />
 				</div>

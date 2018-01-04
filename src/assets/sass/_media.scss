@@ -93,7 +93,7 @@
         height: auto;
     }
     .header-caption {
-        padding: rem(80) rem(100);
+        padding: rem(100) rem(90) rem(120);
         h1 {
             font-size: rem(48);
         }
@@ -107,6 +107,9 @@
     }
     .caption-des {
         font-size: rem(28);
+    }
+    .menu-site {
+        line-height: rem(54);
     }
     .menu-toggle {
         padding: rem(20);
@@ -124,6 +127,14 @@
         .three {
             transform: rotate(-45deg) translateY(-8px);
         }
+    }
+    .menu-back {
+        width: rem(55);
+        height: rem(55);
+        line-height: rem(55);
+    }
+    .menu-back:before {
+        font-size:rem(32)
     }
     .main {
         width: 100%;
@@ -191,6 +202,18 @@
     }
 }
 @media only screen and (max-width:750px){
+    .menu-back {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+    }
+    .menu-back:before {
+        font-size:28px
+    }
+    .menu-site {
+        padding: 6px 0;
+        line-height:rem(42);
+    }
     .search-nolist {
         padding: rem(165) 0 rem(320);
         font-size: rem(28);

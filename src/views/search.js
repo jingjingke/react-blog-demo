@@ -1,9 +1,9 @@
 import React, { Component,PropTypes } from 'react'
 import {Link} from 'react-router';
 import MenuToggle from '../components/menu-toggle'
-import MainSiteBack from '../components/main-site-back'
+import MenuBack from '../components/menu-back'
+import MenuFooter from '../components/menu-footer'
 import ArticleListUl from '../components/article-list-ul'
-import Footer from '../components/footer'
 import Delay from '../components/delay'
 
 import axios from 'axios'
@@ -91,7 +91,7 @@ export default class extends Component {
 		
 		if(this.state.isOK){
 			//显示的是列表还是找不到结果判断
-			var listRender = (<div className="search-nolist">小伙伴，没有你要的搜索结果唉~</div>);
+			let listRender = (<div className="search-nolist">小伙伴，没有你要的搜索结果唉~</div>);
 			if(this.state.hasList){
 				listRender = (<ArticleListUl data={this.state.data} />);
 			}
@@ -100,17 +100,15 @@ export default class extends Component {
 				<div className="container">
 					<div className="header">
 						<MenuToggle thisclick={this.props.menuClick} />
+						<MenuBack />
+                        <p className="menu-site">
+                            <Link to="/">首页</Link>/ 搜索结果
+                        </p>
 						<div className="header-caption"><h1>搜索"{queryStr}"的结果</h1></div>
+                        <MenuFooter />
 					</div>
 					<div className="main">
-						<p className="main-site">
-							当前位置：
-							<Link to="/">首页</Link>-
-							<span>搜索页</span>
-							<MainSiteBack />
-						</p>
 						{listRender}
-						<Footer />
 					</div>
 				</div>
 			)

@@ -1,9 +1,10 @@
 import React, { Component,PropTypes } from 'react'
+import {Link} from 'react-router'
 import MenuToggle from '../components/menu-toggle'
+import MenuBack from '../components/menu-back'
+import MenuFooter from '../components/menu-footer'
 import HeadCaptionDetail from '../components/head-caption-detail'
-import MainSiteDetail from '../components/main-site-detail'
 import ArticleDetail from '../components/article-detail'
-import Footer from '../components/footer'
 import Delay from '../components/delay'
 
 import axios from 'axios'
@@ -75,12 +76,15 @@ export default class extends Component {
 				<div className="container">
 					<div className="header">
 						<MenuToggle thisclick={this.props.menuClick} />
+						<MenuBack />
+						<p className="menu-site">
+                            <Link to="/">首页</Link>/<Link to={"/list/typeid/"+this.state.data.typeid}>{this.state.data.typename}</Link>/ 文章
+						</p>
 						<HeadCaptionDetail title={this.state.data.title} sdate={this.state.data.senddate} source={this.state.data.source}/>
+						<MenuFooter />
 					</div>
 					<div className="main">
-						<MainSiteDetail typeid={this.state.data.typeid} typename={this.state.data.typename} title={this.state.data.title} />
 						<ArticleDetail des={this.state.data.description} body={this.state.data.body} pic={this.state.data.litpic} id={this.state.data.id} />
-						<Footer />
 					</div>
 				</div>
 			)

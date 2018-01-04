@@ -33,8 +33,8 @@ export default class extends Component {
 			const now = this.props.now;
 			
 			//上下页默认时
-			var prev = (<span className="prev" onClick={this.clickEvent.bind(this)} >&lt;</span>)
-			var next = (<span className="next" onClick={this.clickEvent.bind(this)} >&gt;</span>)
+			var prev = (<span className="prev" onClick={this.clickEvent.bind(this)} ></span>)
+			var next = (<span className="next" onClick={this.clickEvent.bind(this)} ></span>)
 			//判断如果是第一页或最后一页隐藏
 			if(now === 1){
 				prev = (<span className="prev disNone">无</span>);

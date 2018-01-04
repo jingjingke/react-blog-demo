@@ -7,7 +7,7 @@ export default class extends Component {
 	}
 	render(){
 		return (
-			<span className="main-site-back" onClick={this.handlerClick}>&lt;&lt;返回上一页</span>
+			<div className="menu-back" onClick={this.handlerClick}>上一页</div>
 		)
 	}
 }

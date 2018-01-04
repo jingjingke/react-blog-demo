@@ -1,9 +1,10 @@
 import React, { Component,PropTypes } from 'react'
+import {Link} from 'react-router';
 import MenuToggle from '../components/menu-toggle'
+import MenuBack from '../components/menu-back'
+import MenuFooter from '../components/menu-footer'
 import HeadCaptionList from '../components/head-caption-list'
-import MainSiteList from '../components/main-site-list'
 import ArticleListUl from '../components/article-list-ul'
-import Footer from '../components/footer'
 import Delay from '../components/delay'
 
 import axios from 'axios'
@@ -109,7 +110,7 @@ export default class extends Component {
 	}
 	handleInfo(arr){
 		const props = this.props.params;
-		var info = '';
+		let info = '';
 		if(arr.length > 0){
 			for(let i=0; i < arr.length; i++){
 				if(arr[i].id === props.value){
@@ -127,23 +128,24 @@ export default class extends Component {
 		
 		if(this.state.isOK){
 			//判断获取到的列表栏目信息
-			var typeInfo = (<HeadCaptionList type={this.props.params.type} title={this.handleInfo(this.props.tagData)} />);
-			var siteInfo = (<MainSiteList title={this.handleInfo(this.props.tagData)} />)
+			let typeInfo = (<HeadCaptionList type={this.props.params.type} title={this.handleInfo(this.props.tagData)} />);
+			let siteInfo = (<p className="menu-site"><Link to="/">首页</Link>/ {this.handleInfo(this.props.tagData)}</p>);
 			if(this.props.params.type==='typeid'){
 				typeInfo = <HeadCaptionList type={this.props.params.type} title={this.handleInfo(this.props.typeData)} tags={this.state.tagList} />
-				siteInfo = (<MainSiteList title={this.handleInfo(this.props.typeData)} />)
+                siteInfo = (<p className="menu-site"><Link to="/">首页</Link>/ {this.handleInfo(this.props.typeData)}</p>);
 			}
-			
+
 			return (
 				<div className="container">
 					<div className="header">
 						<MenuToggle thisclick={this.props.menuClick} />
+						<MenuBack />
+						{siteInfo}
 						{typeInfo}
+						<MenuFooter />
 					</div>
 					<div className="main">
-						{siteInfo}
 						<ArticleListUl data={this.state.data} />
-						<Footer />
 					</div>
 				</div>
 			)

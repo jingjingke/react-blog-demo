@@ -17,6 +17,97 @@
     }
 }
 
+//菜单返回上一页按钮
+.menu-back {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    width: 55px;
+    height: 55px;
+    line-height: 55px;
+    overflow: hidden;
+    &:before {
+        display: block;
+        font-family: "iconfont";
+        content: '\e600';
+        color:#fff;
+        width: inherit;
+        text-align: center;
+        line-height: inherit;
+        font-size: 32px;
+    }
+}
+
+//页面当前位置
+.menu-site {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+    line-height: 55px;
+    font-size: 14px;
+    white-space: nowrap;
+    a {
+        padding: 0 6px;
+        &,&:hover {
+            color: #fff;
+        }
+    }
+}
+
+//页在版权信息等
+.menu-footer {
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 40px;
+    color: #fff;
+    .foot-right {
+        text-indent: 10px;
+        text-transform: uppercase;
+        font-size: 12px;
+        white-space: nowrap;
+        opacity: 0.5;
+    }
+}
+.menu-foot-icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    a {
+        float: right;
+        margin-right: 5px;
+        display: inline;
+        width: 32px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        opacity: 0.8;
+        &:hover {
+            opacity: 1;
+        }
+        &:before {
+            color: #fff;
+            font-family: "iconfont";
+            width: inherit;
+            line-height: inherit;
+            font-size: 28px;
+        }
+        &.git:before {
+            content: '\e602';
+        }
+        &.site:before {
+            content: '\e601';
+        }
+    }
+}
+
 //正常内容的容器
 .container {
     position:relative;

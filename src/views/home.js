@@ -3,7 +3,6 @@ import MenuToggle from '../components/menu-toggle'
 import HeadCaptionIndex from '../components/head-caption-index'
 import MainTag from '../components/main-tag'
 import ArticleListUl from '../components/article-list-ul'
-import Footer from '../components/footer'
 import Delay from '../components/delay'
 
 import axios from 'axios'
@@ -52,7 +51,6 @@ export default class extends Component {
 					<div className="main">
 						<MainTag data={this.props.tagData} />
 						<ArticleListUl data={this.state.data} />
-						<Footer />
 					</div>
 				</div>
 			)

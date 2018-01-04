@@ -8,6 +8,17 @@
 
 可访问[http://www.showke.club/](http://www.showke.club/)进行浏览效果
 
+## 运行 ##
+
+虽然是使用的yarn，但是在运行时同样可以使用npm，下面列出开发与发布时用到的命令行。
+
+```bash
+// 开发环境
+yarn start || yarn run start || npm start || npm run start
+
+// 发布环境
+yarn build || yarn run build || npm run build
+```
 
 ## 前置知识 ##
 
@@ -24,10 +35,10 @@
 页面使用的是封装localstorage的[store.js](https://github.com/nbubna/store)小插件。需要注意两点：
 ##### （1）页面2天清空一次缓存 #####
 　　这个主要通过缓存中的“localTime”时间戳进行判断实现。
-##### （2）通过ctrl+F5组合键强制清除缓存 #####
-　　这个需要注意的是组合按键时，需要将“焦点”放到页面上，可通过鼠标轻点页面任意空白位置。
+##### （2）通过ctrl+F5组合键强制清除缓存(只支持windows系统) #####
+　　这个需要注意的是组合按键时，尽量将“焦点”放到页面上，可通过鼠标轻点页面任意空白位置。
 
-　　若焦点在URL位置或其它位置（如控制台等），ctrl+F5实现的就是普通浏览器组合键效果，而不能起到清空缓存的目的。
+　　若焦点在URL位置或其它位置（如控制台等），ctrl+F5可能失效。
 
 ## 目录结构 ##
 

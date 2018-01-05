@@ -12,7 +12,7 @@ export default class extends Component {
 		// 点击的时候滚动条位置滑到顶部
 		const stop = document.body.scrollTop;
 		let num = 20;
-		var setTime = setInterval(()=>{
+		let setTime = setInterval(()=>{
 			document.body.scrollTop = stop/20 * num;
 			num--;
 			if(num <= 0){
@@ -33,8 +33,8 @@ export default class extends Component {
 			const now = this.props.now;
 			
 			//上下页默认时
-			var prev = (<span className="prev" onClick={this.clickEvent.bind(this)} ></span>)
-			var next = (<span className="next" onClick={this.clickEvent.bind(this)} ></span>)
+			let prev = (<span className="prev" onClick={this.clickEvent.bind(this)} ></span>)
+			let next = (<span className="next" onClick={this.clickEvent.bind(this)} ></span>)
 			//判断如果是第一页或最后一页隐藏
 			if(now === 1){
 				prev = (<span className="prev disNone">无</span>);
@@ -44,10 +44,10 @@ export default class extends Component {
 			}
 			
 			//所有页码--暂存到temp
-			var temp = [];
-			var styleName;
-			for(var i = 1; i <= total; i++){
-				var thisEle;
+			let temp = [];
+			let styleName;
+			for(let i = 1; i <= total; i++){
+				let thisEle;
 				if(i===now){
 					styleName='current'
 				}else{
@@ -57,7 +57,7 @@ export default class extends Component {
 				temp.push(thisEle)
 			}
 			//提取需要的页码--list正式
-			var list = [];
+			let list = [];
 			//判断是否需要加省略号的
 			if(total < 8){
 				//正常赋值 list=temp就可以

@@ -14,19 +14,19 @@ export default class extends Component {
 	}
 	handleGoPage(event){
 		//获取分页上面的文字
-		var thisText = event.target.innerHTML;
+		let thisText = event.target.className;
 		//判断是下一页，上一页还是指定数字
-		if(thisText === '&gt;'){
+		if(thisText === 'next'){
 			this.setState({
 				pageNow:this.state.pageNow + 1
 			})
-		}else if(thisText === '&lt;'){
+		}else if(thisText === 'prev'){
 			this.setState({
 				pageNow:this.state.pageNow - 1
 			})
 		}else{
 			this.setState({
-				pageNow:parseInt(thisText,10)
+				pageNow:parseInt(event.target.innerHTML,10)
 			})
 		}
 		//完

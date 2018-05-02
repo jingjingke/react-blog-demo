@@ -6,7 +6,7 @@
 
 ## 项目地址 ##
 
-可访问[http://www.showke.club/](http://www.showke.club/)进行浏览效果
+可访问[http://www.jingjingke.com/reactDemo/](http://www.jingjingke.com/reactDemo/)进行浏览效果
 
 ## 运行 ##
 
@@ -85,7 +85,7 @@ yarn build || yarn run build || npm run build
 ```
 例如我的：
 ```pre
-	publicUrl ? url.parse(publicUrl).pathname : 'http://www.showke.club/build/'
+	publicUrl ? url.parse(publicUrl).pathname : 'http://www.jingjingke.com/reactDemo/'
 ```
 #### 3、将index.html文件生成到根目录下 ####
 默认react-script使用webpack打包时是将index.html打包在build下，若想直接就从根目录下访问，就需要将它生成在根目录下。在react-scripts文件夹 >> config文件夹 >> webpack.config.prod.js文件中找到：
